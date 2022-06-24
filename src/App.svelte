@@ -5,13 +5,15 @@
   import Feed from "./pages/Feed.svelte";
   import Post from "./pages/Post.svelte";
   import Router from "svelte-spa-router";
+  import NewPost from "./pages/NewPost.svelte";
 
   //setContext("DonationService", new DonationService("http://localhost:4000"));
 
   let routes = {
     "/": Main,
     "/feed": Feed,
-    "/post": Post
+    "/post": Post,
+    "/newpost": NewPost
   }
 </script>
 

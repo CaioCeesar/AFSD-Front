@@ -26,8 +26,9 @@
             </div> 
         </div>
         <div class="column" style='text-align: right;'>
-            <button class="button is-link" style="background-color: #00C076;">New Post</button>
+            <a href='/#/newpost'>
+                <button class="button is-link" style="background-color: #00C076;">New Post</button>
+            </a>
         </div>
     </div>
-
 </div>

@@ -1,5 +1,6 @@
 <script>
     import Header from '.././components/Header.svelte';
+    import Map from '.././components/Map.svelte';
 
     let post = {
         profileName: 'Caio Cesar',
@@ -43,7 +44,8 @@
         </div>
 
         <div class='box' style='background-color: #FBF5D7'>
-            <h1>A</h1>
+            <h1 class='title' style='text-align: center;'>The Route</h1>
+            <Map spots={spots} />
         </div>
 
         {#each spots as spot, i}
