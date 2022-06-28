@@ -43,18 +43,6 @@ export class LeafletMap {
     this.imap.addLayer(this.overlays[title]);
   }
 
-  showLayerControl() {
-    this.control = L.control.layers(this.baseLayers, this.overlays).addTo(this.imap);
-  }
-
-  showZoomControl(position = "topleft") {
-    L.control
-      .zoom({
-        position: position,
-      })
-      .addTo(this.imap);
-  }
-
   moveTo(zoom, location) {
     this.imap.setZoom(zoom);
     this.imap.panTo(new L.LatLng(location.lat, location.lng));

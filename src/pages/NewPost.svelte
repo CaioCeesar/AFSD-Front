@@ -1,25 +1,18 @@
 <script>
     import Header from '.././components/Header.svelte';
     import Map from '.././components/Map.svelte';
-    import CreateSpot from '.././components/createSpot.svelte';
+    import CreateSpot from '.././components/Spots.svelte';
 
     let post = {
         title: '',
         picture: '',
         description: ''
     }
-    let spot = {
-            title: '',
-            picture: '',
-            description: '',
-            lat: 0,
-            long: 0
-        }
     let spots = []
     let errorMessage = "";
 
     async function createPost() {
-        alert('Criado')
+        alert('criado')
     }
 
     let  avatar, fileinput;
@@ -60,8 +53,8 @@
         </div>
 
         <div class='box' style='background-color: #FBF5D7'>
-            <h1 class='title' style='text-align: center;'>Create Spot</h1>
-            <CreateSpot />
+            <h1 class='title' style='text-align: center;'>Creat Spot</h1>
+            <CreateSpot bind:spots={spots} />
         </div>
 
         <div class='box' style='background-color: #FBF5D7'>
@@ -72,6 +65,11 @@
         <div style='text-align: right;'>
             <button class="button is-link" style="background-color: #00C076;">Post</button>
         </div>
+
+        {#each spots as spot}
+            <div>{spot.title}</div>
+            <div>{spot.description}</div>
+        {/each}
     </form>
 
         {#if errorMessage}

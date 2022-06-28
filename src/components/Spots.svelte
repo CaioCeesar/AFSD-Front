@@ -56,8 +56,8 @@
             {/if}
         </div>
 
-        <div>
-            <button class="button is-link" style="background-color: #00C076;text-align:center;">Add Spot</button>
+        <div style="text-align:center;">
+            <button class="button is-link" style="background-color: #00C076;">Add Spot</button>
         </div>
 </form>
 {#if errorMessage}

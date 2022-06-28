@@ -1,18 +1,20 @@
 <script>
   import {setContext} from "svelte";
-  //import {DonationService} from "./services/donation-service";
+  import {TravelShareService} from "./services/travelshare-service.js";
   import Main from "./pages/Main.svelte";
   import Feed from "./pages/Feed.svelte";
   import Post from "./pages/Post.svelte";
+  import Profile from "./pages/Profile.svelte";
   import Router from "svelte-spa-router";
   import NewPost from "./pages/NewPost.svelte";
 
-  //setContext("DonationService", new DonationService("http://localhost:4000"));
+  setContext("TravelShareService", new TravelShareService("http://localhost:4000"));
 
   let routes = {
     "/": Main,
     "/feed": Feed,
-    "/post": Post,
+    "/profile": Profile,
+    "/post/:id": Post,
     "/newpost": NewPost
   }
 </script>

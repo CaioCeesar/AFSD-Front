@@ -6,17 +6,17 @@
     let password = "";
     let errorMessage = "";
   
-    const donationService = getContext("DonationService");
+    const TravelShareService = getContext("TravelShareService");
   
     async function login() {
-      /* let success = await donationService.login(email, password)
+      let success = await TravelShareService.login(email, password)
       if (success) {
-        push("/donate");
+        push("/feed");
       } else {
         email = "";
         password = "";
         errorMessage = "Invalid Credentials";
-      } */
+      }
     }
   </script>
   

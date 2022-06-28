@@ -19,7 +19,7 @@
                     <img src={profilePicture} width=70 alt='img' style="border-radius: 50%;"/>
                 </div>
                 <div class="column">
-                    <a href='/#/feed'>
+                    <a href='/#/profile'>
                         <button class="button is-link" style="background-color: #00C076;">My Profile</button>
                     </a>
                 </div>
@@ -28,6 +28,9 @@
         <div class="column" style='text-align: right;'>
             <a href='/#/newpost'>
                 <button class="button is-link" style="background-color: #00C076;">New Post</button>
+            </a>
+            <a href='/'>
+                <button class="button is-link" style="background-color: #00C076;">Log Out</button>
             </a>
         </div>
     </div>

@@ -1,6 +1,11 @@
 <script>
     import Logo from '.././components/Logo.svelte';
     import LogIn from '.././components/LogIn.svelte';
+    import SignUp from '.././components/SignUp.svelte';
+    import {getContext} from "svelte";
+
+    const TravelShareService = getContext("TravelShareService");
+    TravelShareService.logout();
 </script>
   
 <div style="text-align: center; margin-bottom: 30px;">
@@ -18,7 +23,7 @@
   <div class="column">
     <div class="box" style="background-color: #FBF5D7">
       <h1 class="title">Sign Up</h1>
-      <LogIn/>
+      <SignUp/>
     </div>
   </div>
 </div>

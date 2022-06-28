@@ -1,8 +1,16 @@
 <script>
     import Header from '.././components/Header.svelte';
     import Map from '.././components/Map.svelte';
-
-    let post = {
+    import {getContext, onMount} from "svelte";
+    
+    let post = {spots: []};
+    const TravelShareService = getContext("TravelShareService");
+    onMount(async () => {
+        const postId = window.location.href.split('/').slice(-1)[0]
+        post = await TravelShareService.getPostById(postId);
+    })
+    
+    /* let post = {
         profileName: 'Caio Cesar',
         profilePicture: 'P',
         title: 'Viena',
@@ -25,30 +33,29 @@
             lat: 48.185840991613006,
             long: 16.312656710057706
         }
-    ]
+    ] */
 </script>
   
 <div>
     <Header profilePicture={'https://scontent-frt3-1.xx.fbcdn.net/v/t1.6435-9/49840135_2130540606981930_1920307782444122112_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6gb9KnA9qrEAX8gPFr1&_nc_ht=scontent-frt3-1.xx&oh=00_AT_KdqrSv32oRxnHD3NDMFvhbd23K9nVccatRcgwWMMw1w&oe=62DB1B5D'}/>
-
     <div class='box' style='background-color: #FEEEAD'>
         <div class='box' style='background-color: #FBF5D7'>
-            <div>{post.profileName}</div>
+            <div>{post.userName}</div>
             <div>
                 <h1 class='title' style='text-align: center;'>{post.title}</h1>
                 {post.description}
             </div>
-            <div style='text-align: center;'>
+            <div style='text-align: center;margin-top:10px;'>
                 <img src={post.picture} width=500 alt="img"/>
             </div>
         </div>
 
         <div class='box' style='background-color: #FBF5D7'>
             <h1 class='title' style='text-align: center;'>The Route</h1>
-            <Map spots={spots} />
+            <Map spots={post.spots} />
         </div>
 
-        {#each spots as spot, i}
+        {#each post.spots as spot, i}
             <div class='box' style='background-color: #FBF5D7'>
                 <div>
                     <h1 class='title' style='text-align: center;'>{i + 1}° {spot.title}</h1>

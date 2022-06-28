@@ -3,7 +3,7 @@
     const TravelShareService = getContext("TravelShareService");
     let posts = [];
     onMount(async () => {
-        posts = await TravelShareService.getPostsFeed();
+        posts = await TravelShareService.getPostsProfile();
     })
     
 </script>
