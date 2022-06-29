@@ -20,7 +20,7 @@
             lat: 0,
             long: 0
         }
-
+        avatar = false;
     };
 
     let  avatar, fileinput;

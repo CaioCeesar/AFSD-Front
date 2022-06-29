@@ -14,6 +14,8 @@ export class TravelShareService {
       user.set({
         email: savedUser.email,
         token: savedUser.token,
+        id: savedUser.id,
+        picture: savedUser.picture
       });
       axios.defaults.headers.common["Authorization"] = "Bearer " + savedUser.token;
     }
@@ -27,8 +29,10 @@ export class TravelShareService {
         user.set({
           email: email,
           token: response.data.token,
+          id: response.data.id,
+          picture: response.data.picture
         });
-        localStorage.login = JSON.stringify({email: email, token: response.data.token});
+        localStorage.login = JSON.stringify({email: email, token: response.data.token, id: response.data.id, picture: response.data.picture});
         return true;
       }
       return false;
@@ -41,6 +45,8 @@ export class TravelShareService {
     user.set({
       email: "",
       token: "",
+      id: "",
+      picture: ""
     });
     axios.defaults.headers.common["Authorization"] = "";
     localStorage.removeItem("login");
@@ -91,6 +97,15 @@ export class TravelShareService {
   async getPostById(postId) {
     try {
       const response = await axios.get(this.baseUrl + "/api/posts/" + postId);
+      return response.data;
+    } catch (error) {
+      return [];
+    }
+  }
+
+  async deletePost(postId) {
+    try {
+      const response = await axios.delete(this.baseUrl + "/api/posts/" + postId);
       return response.data;
     } catch (error) {
       return [];

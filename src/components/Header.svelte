@@ -1,6 +1,13 @@
 <script>
     import Logo from '.././components/Logo.svelte';
-    export let profilePicture = 'https://johannesippen.com/img/blog/humans-not-users/header.jpg'
+    import {user} from "../stores";
+    let loggedUser = get__store(user);
+
+    function get__store(store) {
+        let $val
+        store.subscribe($ => $val = $.picture)()
+        return $val
+    }
 </script>
 
 <div class='box' style="background-color: #FBF5D7; margin-top: 15px;">
@@ -16,7 +23,7 @@
                     </a>
                 </div>
                 <div class="column">
-                    <img src={profilePicture} width=70 alt='img' style="border-radius: 50%;"/>
+                    <img src={loggedUser} width=70 alt='img' style="border-radius: 50%;"/>
                 </div>
                 <div class="column">
                     <a href='/#/profile'>
