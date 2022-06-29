@@ -10,8 +10,17 @@
     let errorMessage = "";
 
     async function createSpot() {
+        spot.picture = avatar;
         spots.push(spot);
         spots = [...spots];
+        spot = {
+            title: '',
+            picture: '',
+            description: '',
+            lat: 0,
+            long: 0
+        }
+
     };
 
     let  avatar, fileinput;

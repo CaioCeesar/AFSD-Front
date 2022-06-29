@@ -61,10 +61,10 @@ export class TravelShareService {
     }
   }
 
-  async donate(donation) {
+  async createPost(post) {
     try {
-      const response = await axios.post(this.baseUrl + "/api/candidates/" + donation.candidate + "/donations", donation);
-      return response.status == 200;
+      const response = await axios.post(this.baseUrl + "/api/posts", post);
+      return response.status == 201;
     } catch (error) {
       return false;
     }
@@ -91,15 +91,6 @@ export class TravelShareService {
   async getPostById(postId) {
     try {
       const response = await axios.get(this.baseUrl + "/api/posts/" + postId);
-      return response.data;
-    } catch (error) {
-      return [];
-    }
-  }
-
-  async getDonations() {
-    try {
-      const response = await axios.get(this.baseUrl + "/api/donations");
       return response.data;
     } catch (error) {
       return [];

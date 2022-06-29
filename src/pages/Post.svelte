@@ -52,7 +52,9 @@
 
         <div class='box' style='background-color: #FBF5D7'>
             <h1 class='title' style='text-align: center;'>The Route</h1>
-            <Map spots={post.spots} />
+            {#if post.spots.length > 0}
+                <Map spots={post.spots} />
+            {/if}
         </div>
 
         {#each post.spots as spot, i}

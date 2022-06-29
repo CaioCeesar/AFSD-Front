@@ -1,17 +1,15 @@
 <script>
     import 'leaflet/dist/leaflet.css';
     import {LeafletMap} from '../services/leaflet-map';
-    import {getContext, onMount} from "svelte";
+    import {afterUpdate, onMount} from "svelte";
     export let spots = [];
-
-    const donationService = getContext("DonationService");
   
     const mapConfig = {
       location: {lat: 52.160858, lng: -7.152420},
       zoom: 14,
       minZoom: 1,
     };
-    let map = null;
+    let map
   
     /* onMount(async () => {
         map = new LeafletMap("donation-map", mapConfig); 
@@ -21,6 +19,15 @@
       map = new LeafletMap("donation-map", mapConfig);
   
       spots.forEach(spot => {
+        console.log(spot)
+        addMarker(spot);
+      });
+    });
+
+    afterUpdate(async () => {
+  
+      spots.forEach(spot => {
+        console.log(spot)
         addMarker(spot);
       });
     });
