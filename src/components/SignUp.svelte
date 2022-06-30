@@ -7,10 +7,10 @@
     let password = "";
     let errorMessage = "";
   
-    const travelShareService = getContext("TravelShareService");
+    const TravelShareService = getContext("TravelShareService");
   
     async function signup() {
-      let success = await travelShareService.signup(name, avatar, email, password)
+      let success = await TravelShareService.signUp(name, avatar, email, password);
       if (success) {
         push("/feed");
       } else {

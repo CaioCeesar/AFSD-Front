@@ -19,8 +19,8 @@
         post = await TravelShareService.getPostById(postId);
     })
 
-    function deletePost() {
-        TravelShareService.deletePost(post._id);
+    async function deletePost() {
+        await TravelShareService.deletePost(post._id);
         push('/profile')
     }
 </script>

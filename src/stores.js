@@ -4,5 +4,6 @@ export const user = writable({
   email: "",
   token: "",
   id: "",
-  picture: ""
+  picture: "",
+  admin: false
 });

@@ -5,9 +5,9 @@
   import Feed from "./pages/Feed.svelte";
   import Post from "./pages/Post.svelte";
   import Profile from "./pages/Profile.svelte";
-  import Admin from "./pages/Admin.svelte";
   import Router from "svelte-spa-router";
   import NewPost from "./pages/NewPost.svelte";
+  import Admin from "./pages/Admin.svelte";
 
   setContext("TravelShareService", new TravelShareService("http://localhost:4000"));
 

@@ -15,7 +15,8 @@ export class TravelShareService {
         email: savedUser.email,
         token: savedUser.token,
         id: savedUser.id,
-        picture: savedUser.picture
+        picture: savedUser.picture,
+        admin: savedUser.admin
       });
       axios.defaults.headers.common["Authorization"] = "Bearer " + savedUser.token;
     }
@@ -30,7 +31,8 @@ export class TravelShareService {
           email: email,
           token: response.data.token,
           id: response.data.id,
-          picture: response.data.picture
+          picture: response.data.picture,
+          admin: response.data.admin
         });
         localStorage.login = JSON.stringify({email: email, token: response.data.token, id: response.data.id, picture: response.data.picture});
         return {success: response.data.success, admin: response.data.admin};
@@ -46,21 +48,31 @@ export class TravelShareService {
       email: "",
       token: "",
       id: "",
-      picture: ""
+      picture: "",
+      admin: false
     });
     axios.defaults.headers.common["Authorization"] = "";
     localStorage.removeItem("login");
   }
 
-  async signup(name, picture, email, password) {
+  async signUp(name, picture, email, password) {
     try {
       const userDetails = {
         name: name,
         picture: picture,
         email: email,
         password: password,
+        admin: false
       };
-      await axios.post(this.baseUrl + "/api/users", userDetails);
+      let response = await axios.post(this.baseUrl + "/api/users", userDetails);
+      user.set({
+        email: email,
+        token: response.data.token,
+        id: response.data.id,
+        picture: response.data.picture,
+        admin: response.data.admin
+      });
+      localStorage.login = JSON.stringify({email: email, token: response.data.token, id: response.data.id, picture: response.data.picture});
       return true;
     } catch (error) {
       return false;
@@ -106,6 +118,24 @@ export class TravelShareService {
   async deletePost(postId) {
     try {
       const response = await axios.delete(this.baseUrl + "/api/posts/" + postId);
+      return response.data;
+    } catch (error) {
+      return [];
+    }
+  }
+
+  async deleteUser(userId) {
+    try {
+      const response = await axios.delete(this.baseUrl + "/api/users/" + userId);
+      return response.data;
+    } catch (error) {
+      return [];
+    }
+  }
+
+  async getUsers() {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/users");
       return response.data;
     } catch (error) {
       return [];
