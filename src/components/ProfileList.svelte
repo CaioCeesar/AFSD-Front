@@ -14,6 +14,7 @@
             <div>{post.userName}</div>
             <div>
                 <h1 class='title' style='text-align: center;'>{post.title}</h1>
+                <div>Category: {post.category}</div>
                 {post.description}
             </div>
             <div style='text-align: center;margin-top:10px;'>

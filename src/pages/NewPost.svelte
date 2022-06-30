@@ -7,11 +7,13 @@
 
     let post = {
         title: '',
+        category: '',
         picture: '',
         description: '',
         spots: []
     }
     let errorMessage = "";
+    const categories = ["Food", "Museum", "Nature", "History", "Music", "Chill", "Night Life"];
 
     const TravelShareService = getContext("TravelShareService");
   
@@ -51,6 +53,17 @@
             <div class="field">
                 <label class="label" for="title">Title</label>
                 <input bind:value={post.title} class="input" id="title" name="title"placeholder="Enter title" type="text" style="background-color: #FBF5D7">
+            </div>
+
+            <div class="field">
+                <label class="label" for="category">Category</label>
+                <select id="category" name="category" style='background-color: #FBF5D7' bind:value={post.category}>
+                    {#each categories as category}
+                        <option value={category}>
+                            {category}
+                        </option>
+                    {/each}
+                </select>
             </div>
 
             <div class="field">
