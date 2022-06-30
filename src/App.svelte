@@ -5,6 +5,7 @@
   import Feed from "./pages/Feed.svelte";
   import Post from "./pages/Post.svelte";
   import Profile from "./pages/Profile.svelte";
+  import Admin from "./pages/Admin.svelte";
   import Router from "svelte-spa-router";
   import NewPost from "./pages/NewPost.svelte";
 
@@ -15,7 +16,8 @@
     "/feed": Feed,
     "/profile": Profile,
     "/post/:id": Post,
-    "/newpost": NewPost
+    "/newpost": NewPost,
+    "/admin": Admin
   }
 </script>
 

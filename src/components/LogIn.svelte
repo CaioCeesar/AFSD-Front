@@ -9,10 +9,14 @@
     const TravelShareService = getContext("TravelShareService");
   
     async function login() {
-      let success = await TravelShareService.login(email, password)
-      console.log(success)
-      if (success) {
-        push("/feed");
+      let auth = await TravelShareService.login(email, password)
+      if (auth.success) {
+        if (auth.admin) {
+          push("/admin")
+        }
+        else {
+          push("/feed");
+        }
       } else {
         email = "";
         password = "";

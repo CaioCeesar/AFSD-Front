@@ -33,7 +33,7 @@ export class TravelShareService {
           picture: response.data.picture
         });
         localStorage.login = JSON.stringify({email: email, token: response.data.token, id: response.data.id, picture: response.data.picture});
-        return true;
+        return {success: response.data.success, admin: response.data.admin};
       }
       return false;
     } catch (error) {
