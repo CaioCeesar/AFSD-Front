@@ -8,6 +8,7 @@
         long: 0
     }
     let errorMessage = "";
+    const categories = ["Food", "Museum", "Nature", "History", "Music", "Chill", "Night Life", "Accommodation"];
 
     async function createSpot() {
         spot.picture = avatar;
@@ -15,6 +16,7 @@
         spots = [...spots];
         spot = {
             title: '',
+            category: '',
             picture: '',
             description: '',
             lat: 0,
@@ -39,6 +41,17 @@
         <div class="field">
             <label class="label" for="spotTitle">Title</label>
             <input bind:value={spot.title} class="input" id="spotTitle" name="spotTitle"placeholder="Enter title" type="text" style="background-color: #FBF5D7">
+        </div>
+
+        <div class="field">
+            <label class="label" for="category">Category</label>
+            <select id="category" name="category" style='background-color: #FBF5D7' bind:value={spot.category}>
+                {#each categories as category}
+                    <option value={category}>
+                        {category}
+                    </option>
+                {/each}
+            </select>
         </div>
 
         <div class="field">

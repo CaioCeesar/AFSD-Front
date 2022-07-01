@@ -6,18 +6,15 @@
   
     const mapConfig = {
       location: {lat: 52.160858, lng: -7.152420},
-      zoom: 14,
+      zoom: 16,
       minZoom: 1,
     };
     let map
-  
-    /* onMount(async () => {
-        map = new LeafletMap("donation-map", mapConfig); 
-    }); */
-
+    const categories = ["Food", "Museum", "Nature", "History", "Music", "Chill", "Night Life", "Accommodation"];
     onMount(async () => {
       map = new LeafletMap("donation-map", mapConfig);
-  
+      categories.map(x=> {map.addLayerGroup(x)});
+      map.showLayerControl();
       spots.forEach(spot => {
         console.log(spot)
         addMarker(spot);
@@ -33,9 +30,7 @@
     });
   
     export function addMarker(spot) {
-      //const spotStr = `${spot.candidate.firstName} ${spot.candidate.lastName} €${spot.amount.toString()}`;
-
-      map.addMarker({lat: spot.lat, lng: spot.long}, spot.title, "spots");
+      map.addMarker({lat: spot.lat, lng: spot.long}, spot.title, spot.category);
       map.moveTo(11, {lat: spot.lat, lng: spot.long});
     }
   </script>

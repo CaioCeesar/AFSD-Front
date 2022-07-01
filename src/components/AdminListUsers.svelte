@@ -9,9 +9,6 @@
     }
 
     export let users = [];
-    onMount(async () => {
-        users = await TravelShareService.getUsers();
-    });
 </script>
 
 <div class='box' style='background-color: #FBF5D7'>

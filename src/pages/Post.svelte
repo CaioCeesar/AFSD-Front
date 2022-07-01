@@ -32,7 +32,6 @@
             {post.userName}
             <div>
                 <h1 class='title' style='text-align: center;'>{post.title}</h1>
-                <div>Category: {post.category}</div>
                 {post.description}
             </div>
             <div style='text-align: center;margin-top:10px;'>
@@ -51,6 +50,7 @@
             <div class='box' style='background-color: #FBF5D7'>
                 <div>
                     <h1 class='title' style='text-align: center;'>{i + 1}° {spot.title}</h1>
+                    <div>Category: {spot.category}</div>
                     {spot.description}
                 </div>
                 <div style='text-align: center;'>

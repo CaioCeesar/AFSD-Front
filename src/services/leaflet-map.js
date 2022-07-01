@@ -75,4 +75,8 @@ export class LeafletMap {
     let hiddenMethodMap = this.imap;
     hiddenMethodMap._onResize();
   }
+
+  showLayerControl() {
+    this.control = L.control.layers(this.baseLayers, this.overlays).addTo(this.imap);
+  }
 }
