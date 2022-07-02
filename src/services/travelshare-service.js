@@ -65,14 +65,7 @@ export class TravelShareService {
         admin: false
       };
       let response = await axios.post(this.baseUrl + "/api/users", userDetails);
-      user.set({
-        email: email,
-        token: response.data.token,
-        id: response.data.id,
-        picture: response.data.picture,
-        admin: response.data.admin
-      });
-      localStorage.login = JSON.stringify({email: email, token: response.data.token, id: response.data.id, picture: response.data.picture});
+      await this.login(response.data.email, response.data.password)
       return true;
     } catch (error) {
       return false;
