@@ -1,48 +1,94 @@
-# Svelte + Vite
+<div id="top"></div>
 
-This template should help get you started developing with Svelte in Vite.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+<img src="https://res.cloudinary.com/dhwwwyljj/image/upload/v1656773236/yvjaxmnjqff7pulacazo.png" alt="Logo" width="650" height="250">
 
-## Recommended IDE Setup
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+<h3 align="center">Travel Share Front-end</h3>
 
-## Need an official Svelte framework?
+  <p align="center">
+    <br />
+    <a href="https://github.com/github_username/repo_name"><strong>Try Travel Share »</strong></a>
+    <br />
+</div>
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
 
-## Technical considerations
 
-**Why use this over SvelteKit?**
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-  `vite dev` and `vite build` wouldn't work in a SvelteKit environment, for example.
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+Travel Share is a website that you can share your travels with other users, in each post you can put spots and highlights of your travels, post pictures, divide the spots in categories and all of them are shown in a map, so you can track down your and other users routes.
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+This application was made as a final project for the course Advanced Full Stack Development in OTH Regensburg. The project is composed by two parts, the front-end made with Svelte framework for Javascript and the back-end, made with Hapi. 
+<br/>
+<br/>
+<a href="https://github.com/CaioCeesar/AFSD-api"><strong>Travel Share API</strong></a> 
 
-**Why include `.vscode/extensions.json`?**
+<!-- GETTING STARTED -->
+## Getting Started
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+### Prerequisites
 
-**Why enable `checkJs` in the JS template?**
+* Node.js
+* Travel Share API
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+### Installation
+To run Travel Share Front clone this repository and open it's folder in a terminal.
+Run this code to install the necessary dependencies.
+   ```sh
+   npm install
+   ```
+   
+### Runing the project
+Run the following code to start the front-end application
+   ```sh
+   npm run dev
+   ```
 
-**Why is HMR not preserving my local component state?**
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+<!-- Documentation -->
+## Documentation
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+When the API starts, it creates 4 profiles and their posts with the seeder. Below are their credentials. Using the admin credentials will take you to the admin dashboard.
+
+admin@admin.com
+<br/>
+admin123
+
+CaioCesar@email.com
+<br/>
+Caio123
+
+AlanPiana@email.com
+<br/>
+Alan123
+
+DiegoCruz@email.com
+<br/>
+Diego123
+
+
+<!-- CONTACT -->
+## Contact
+
+Caio Cesar -  caio.pan-lopes-de-barros@st.oth-regensburg.de
