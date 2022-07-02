@@ -6,7 +6,7 @@ export class TravelShareService {
 
   constructor(baseUrl) {
     console.log("HELLO");
-    this.baseUrl = "http://localhost:4000";
+    this.baseUrl = "http://desolate-ridge-82978.herokuapp.com";
     console.log(this.baseUrl);
     const Credentials = localStorage.login;
     if (Credentials) {

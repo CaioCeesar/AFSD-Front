@@ -9,7 +9,7 @@
   import NewPost from "./pages/NewPost.svelte";
   import Admin from "./pages/Admin.svelte";
 
-  setContext("TravelShareService", new TravelShareService("http://localhost:4000"));
+  setContext("TravelShareService", new TravelShareService("http://desolate-ridge-82978.herokuapp.com"));
 
   let routes = {
     "/": Main,
